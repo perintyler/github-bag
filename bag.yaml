@@ -1,6 +1,9 @@
 name: github
 description: GitHub PR operations — review, comment, clean commits, find repos
 
+bags:
+  - github-app
+
 tools:
   entry: tools.ts
   env:
