@@ -8,12 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@barry-rocks/tools':
+        specifier: link:../../barry/packages/tools
+        version: link:../../barry/packages/tools
       '@barry/github':
         specifier: link:../../barry/packages/github
         version: link:../../barry/packages/github
-      '@barry/tools':
-        specifier: link:../../barry/packages/tools
-        version: link:../../barry/packages/tools
       zod:
         specifier: 3.25.76
         version: 3.25.76
