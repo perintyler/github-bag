@@ -176,7 +176,6 @@ async function processMention(context: MentionContext): Promise<void> {
       diff,
     );
 
-    // Spawn barry session
     log.info("mention.agent_starting", {
       owner, repo, number, sender,
       barry: identity.identityName,
@@ -190,7 +189,6 @@ async function processMention(context: MentionContext): Promise<void> {
       return;
     }
 
-    // Post the reply
     await client.postComment(owner, repo, number, response);
     log.info("mention.replied", { owner, repo, number, responseLength: response.length });
   } catch (err) {
@@ -211,7 +209,6 @@ async function processMention(context: MentionContext): Promise<void> {
 }
 
 export async function handleMention(context: MentionContext): Promise<void> {
-  // Deduplication
   if (!trackDelivery(context.deliveryId)) {
     log.info("mention.duplicate_delivery", { deliveryId: context.deliveryId });
     return;

@@ -118,7 +118,6 @@ app.get("/health", (_req, res) => {
   res.json({ ok: true, service: "github-app" });
 });
 
-// GitHub webhook receiver
 app.post("/github/webhook", verifyWebhookSignature, (req, res) => {
   const event = req.headers["x-github-event"] as string;
   const deliveryId = req.headers["x-github-delivery"] as string;
