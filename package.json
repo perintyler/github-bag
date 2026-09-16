@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@barry/github": "link:../../barry/packages/github",
+    "@barry/github": "link:./packages/github",
     "@barry-rocks/tools": "link:../../barry/packages/tools",
     "zod": "3.25.76"
   },

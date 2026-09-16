@@ -1,0 +1,43 @@
+{
+  "name": "@barry-rocks/github",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "type": "module",
+  "description": "GitHub API client for Barry - PRs, reviews, repos, installations",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build": "tsup",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@barry-rocks/agent-runtime": "link:../../../../barry/packages/agent-runtime",
+    "@barry-rocks/json-schema": "link:../../../../barry/packages/json-schema",
+    "@barry-rocks/logger": "link:../../../../barry/packages/logger",
+    "jsonwebtoken": "9.0.3"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "9.0.10",
+    "@types/node": "22.15.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  }
+}

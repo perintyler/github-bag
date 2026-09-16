@@ -14,7 +14,7 @@
   "dependencies": {
     "@barry-rocks/db": "link:../../../barry/packages/db",
     "@barry-rocks/env": "link:../../../barry/packages/env",
-    "@barry-rocks/github": "link:../../../barry/packages/github",
+    "@barry-rocks/github": "link:../packages/github",
     "@barry-rocks/logger": "link:../../../barry/packages/logger",
     "@barry-rocks/secrets": "link:../../../barry/packages/secrets",
     "express": "4.22.1"

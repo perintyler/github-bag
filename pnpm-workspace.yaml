@@ -1,0 +1,12 @@
+# packages/github holds the GitHub API client this bag's tools.ts and the
+# github-app server both import. It moved here from the barry monorepo's
+# packages/github, where its only consumers were this bag and its app — a
+# packages/* entry whose only consumer is one bag belongs in the bag
+# (docs/bags.md, "Where a package belongs").
+#
+# github-app is listed too: it carries its own pnpm-lock.yaml and used to
+# install standalone, but it now depends on ../packages/github by relative
+# path, and only a workspace member resolves that consistently.
+packages:
+  - packages/github
+  - github-app
