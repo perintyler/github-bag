@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@barry-rocks/sdk": "link:../../barry/sdk/lib",
     "@barry/github": "link:./packages/github",
-    "@barry-rocks/sdk-bags": "link:../../barry/sdk/bags",
     "zod": "3.25.76"
   },
   "devDependencies": {
