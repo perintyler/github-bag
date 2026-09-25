@@ -27,21 +27,18 @@ importers:
 
   github-app:
     dependencies:
-      '@barry-rocks/db':
-        specifier: link:../../../barry/packages/db
-        version: link:../../../barry/packages/db
-      '@barry-rocks/env':
-        specifier: link:../../../barry/packages/env
-        version: link:../../../barry/packages/env
       '@barry-rocks/github':
         specifier: link:../packages/github
         version: link:../packages/github
-      '@barry-rocks/logger':
-        specifier: link:../../../barry/packages/logger
-        version: link:../../../barry/packages/logger
-      '@barry-rocks/secrets':
-        specifier: link:../../../barry/packages/secrets
-        version: link:../../../barry/packages/secrets
+      '@barry-rocks/identities-bag':
+        specifier: link:../../../barry/harness/identities
+        version: link:../../../barry/harness/identities
+      '@barry-rocks/logs-bag':
+        specifier: link:../../../barry/harness/telemetry/logs
+        version: link:../../../barry/harness/telemetry/logs
+      '@barry-rocks/sdk':
+        specifier: link:../../../barry/sdk/lib
+        version: link:../../../barry/sdk/lib
       express:
         specifier: 4.22.1
         version: 4.22.1
@@ -64,15 +61,15 @@ importers:
 
   packages/github:
     dependencies:
-      '@barry-rocks/agent-runtime':
-        specifier: link:../../../../barry/packages/agent-runtime
-        version: link:../../../../barry/packages/agent-runtime
-      '@barry-rocks/json-schema':
-        specifier: link:../../../../barry/packages/json-schema
-        version: link:../../../../barry/packages/json-schema
-      '@barry-rocks/logger':
-        specifier: link:../../../../barry/packages/logger
-        version: link:../../../../barry/packages/logger
+      '@barry-rocks/agent-registry':
+        specifier: link:../../../../barry/adapters/agents/registry
+        version: link:../../../../barry/adapters/agents/registry
+      '@barry-rocks/logs-bag':
+        specifier: link:../../../../barry/harness/telemetry/logs
+        version: link:../../../../barry/harness/telemetry/logs
+      '@barry-rocks/sdk':
+        specifier: link:../../../../barry/sdk/lib
+        version: link:../../../../barry/sdk/lib
       jsonwebtoken:
         specifier: 9.0.3
         version: 9.0.3

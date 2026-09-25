@@ -1,6 +1,6 @@
 import fs from "fs";
 import jwt from "jsonwebtoken";
-import { createLogger } from "@barry-rocks/logger";
+import { createLogger } from "@barry-rocks/logs-bag";
 
 const log = createLogger("github");
 

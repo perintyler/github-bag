@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 
 const resolveIdentityCredentials = vi.fn();
-vi.mock("@barry-rocks/secrets/identity", () => ({
+vi.mock("@barry-rocks/sdk/credentials/identity", () => ({
   resolveIdentityCredentials: (...args: unknown[]) => resolveIdentityCredentials(...args),
 }));
 

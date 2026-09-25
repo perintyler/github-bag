@@ -1,5 +1,5 @@
-import { registry } from "@barry-rocks/agent-runtime";
-import { createLogger } from "@barry-rocks/logger";
+import { getAgent } from "@barry-rocks/agent-registry";
+import { createLogger } from "@barry-rocks/logs-bag";
 
 const log = createLogger("github-clean");
 
@@ -64,8 +64,8 @@ export async function cleanCommits(options: CleanCommitOptions): Promise<void> {
 
   log.info("clean.start", { cwd, push });
 
-  const runner = registry.createRunner({
-    provider: "claude-sdk",
+  const runner = await getAgent("claude").complete({
+    provider: "claude",
     cwd,
     mcpServers: {},
     maxTurns,

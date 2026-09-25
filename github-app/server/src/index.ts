@@ -3,11 +3,16 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import express, { Request, Response, NextFunction } from "express";
-import { createLogger, setupGracefulShutdown } from "@barry-rocks/logger";
-import { validateEnv } from "@barry-rocks/env";
-import { createRequestLogger } from "@barry-rocks/logger/middleware";
+import { createLogger, setupGracefulShutdown } from "@barry-rocks/logs-bag";
+import { createRequestLogger, setLoggerFactory, validateEnv } from "@barry-rocks/sdk/services";
 import { exchangeCodeForToken, GitHubClient } from "@barry-rocks/github";
 import { handleWebhook } from "./webhook-handler.js";
+
+// The request logger in @barry-rocks/sdk/services takes its logger factory
+// injected rather than importing one, and refuses to run without it. This is
+// the composition root, so install it before anything builds a logger --
+// the same boot call barry's own services make.
+setLoggerFactory(createLogger);
 
 const log = createLogger("github-app");
 

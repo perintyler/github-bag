@@ -15,9 +15,9 @@
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
-    "@barry-rocks/agent-runtime": "link:../../../../barry/packages/agent-runtime",
-    "@barry-rocks/json-schema": "link:../../../../barry/packages/json-schema",
-    "@barry-rocks/logger": "link:../../../../barry/packages/logger",
+    "@barry-rocks/agent-registry": "link:../../../../barry/adapters/agents/registry",
+    "@barry-rocks/logs-bag": "link:../../../../barry/harness/telemetry/logs",
+    "@barry-rocks/sdk": "link:../../../../barry/sdk/lib",
     "jsonwebtoken": "9.0.3"
   },
   "devDependencies": {

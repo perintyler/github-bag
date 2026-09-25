@@ -2,7 +2,7 @@ import { execFileSync } from "child_process";
 import { chmodSync, existsSync, mkdtempSync, rmSync, writeFileSync } from "fs";
 import { tmpdir } from "os";
 import { join } from "path";
-import { createLogger } from "@barry-rocks/logger";
+import { createLogger } from "@barry-rocks/logs-bag";
 
 const log = createLogger("github-find-repo", { transport: "stderr" });
 

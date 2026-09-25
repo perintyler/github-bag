@@ -1,7 +1,7 @@
 import { execFile } from "child_process";
 import { existsSync } from "fs";
 import { GitHubClient } from "@barry-rocks/github";
-import { createLogger } from "@barry-rocks/logger";
+import { createLogger } from "@barry-rocks/logs-bag";
 import { getToken } from "./token-manager.js";
 import { resolveInstallationIdentity } from "./resolve-installation.js";
 import type { MentionContext } from "./webhook-handler.js";

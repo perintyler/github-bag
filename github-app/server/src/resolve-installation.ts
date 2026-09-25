@@ -1,6 +1,6 @@
-import { resolveIdentityCredentials } from "@barry-rocks/secrets/identity";
+import { resolveIdentityCredentials } from "@barry-rocks/sdk/credentials/identity";
 import type { GitHubAppConfig } from "@barry-rocks/github";
-import { createLogger } from "@barry-rocks/logger";
+import { createLogger } from "@barry-rocks/logs-bag";
 import { appConfigFromEnv, installationIdFromEnv } from "./token-manager.js";
 
 const log = createLogger("github-app");

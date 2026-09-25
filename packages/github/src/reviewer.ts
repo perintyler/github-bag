@@ -2,10 +2,11 @@ import { execSync } from "child_process";
 import { readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { registry } from "@barry-rocks/agent-runtime";
-import type { ProviderEvent } from "@barry-rocks/agent-runtime";
-import { extractFence, validateAgainstSchema } from "@barry-rocks/json-schema";
-import { createLogger } from "@barry-rocks/logger";
+import { getAgent } from "@barry-rocks/agent-registry";
+import type { ProviderEvent } from "@barry-rocks/sdk/agents";
+import { extractFence } from "@barry-rocks/sdk/agents";
+import { validateAgainstSchema } from "@barry-rocks/sdk/bags/validate";
+import { createLogger } from "@barry-rocks/logs-bag";
 import { GitHubClient } from "./client.js";
 import type { ReviewComment, ReviewEvent } from "./client.js";
 import { formatReviewBody } from "./review-template.js";
@@ -211,8 +212,10 @@ export async function reviewPullRequest(options: ReviewOptions): Promise<ReviewR
       : "");
 
   try {
-    const runner = registry.createRunner({
-      provider: "claude-sdk",
+    // createRunner became Agent.complete, and "claude-sdk" became "claude":
+    // one agent per id, whose complete() resolves the SDK implementation.
+    const runner = await getAgent("claude").complete({
+      provider: "claude",
       cwd: agentCwd,
       mcpServers,
       maxTurns,

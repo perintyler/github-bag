@@ -12,11 +12,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@barry-rocks/db": "link:../../../barry/packages/db",
-    "@barry-rocks/env": "link:../../../barry/packages/env",
     "@barry-rocks/github": "link:../packages/github",
-    "@barry-rocks/logger": "link:../../../barry/packages/logger",
-    "@barry-rocks/secrets": "link:../../../barry/packages/secrets",
+    "@barry-rocks/identities-bag": "link:../../../barry/harness/identities",
+    "@barry-rocks/logs-bag": "link:../../../barry/harness/telemetry/logs",
+    "@barry-rocks/sdk": "link:../../../barry/sdk/lib",
     "express": "4.22.1"
   },
   "devDependencies": {

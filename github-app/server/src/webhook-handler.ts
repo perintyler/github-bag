@@ -1,4 +1,4 @@
-import { createLogger } from "@barry-rocks/logger";
+import { createLogger } from "@barry-rocks/logs-bag";
 import { handleMention } from "./mention-handler.js";
 import type { ResolvedBarry } from "./resolve-installation.js";
 
@@ -53,7 +53,7 @@ async function findClaimingBarry(installationId: number): Promise<ResolvedBarry 
     // Imported lazily so a delivery that never reaches this point — the vast
     // majority, since most events carry no mention — does not pay for a
     // database connection.
-    const { Identities } = await import("@barry-rocks/db");
+    const { Identities } = await import("@barry-rocks/identities-bag/store/identities");
     const barry = await Identities.findByGitHubInstallation(installationId, log);
     return barry ? { id: barry.id, name: barry.name } : null;
   } catch (err) {

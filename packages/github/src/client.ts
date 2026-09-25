@@ -1,4 +1,4 @@
-import { createLogger } from "@barry-rocks/logger";
+import { createLogger } from "@barry-rocks/logs-bag";
 
 const log = createLogger("github");
 
